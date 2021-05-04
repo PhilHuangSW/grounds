@@ -1,0 +1,28 @@
+<% layout('layouts/boilerplate') %>
+<div class="row">
+  <div class="col-6 offset-3">
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading">Error!</h4>
+
+      <!-- WILL NOT DISPLAY ERROR STACK TRACE WHEN IN PRODUCTION MODE -->
+      <% if (process.env.NODE_ENV !== "production") { %>
+      <p>
+        <b>Status Code:</b>
+        <%= err.status %>
+      </p>
+      <hr>
+      <p class="mb-0">
+        <b>Message:</b>
+        <%= err.message %>
+      </p>
+      <p>
+        <b>Stack:</b>
+        <%= err.stack %>
+      </p>
+
+      <% } %>
+
+
+    </div>
+  </div>
+</div>
