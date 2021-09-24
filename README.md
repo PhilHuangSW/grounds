@@ -1,5 +1,5 @@
 <a href="https://rocky-fjord-17470.herokuapp.com/" alt="Grounds banner linking to website">
-  <img src="https://github.com/PhilHuangSW/grounds/blob/master/banner.PNG" /></a>
+  <img src="https://github.com/PhilHuangSW/grounds/blob/main/banner.PNG" /></a>
   
 <h1 align="center">Grounds 
 
