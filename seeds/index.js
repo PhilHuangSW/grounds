@@ -84,13 +84,14 @@ db.once('open', () => {
 const sample = array => array[Math.floor(Math.random() * array.length)];
 
 const seedDB = async () => {
-  // await Campground.deleteMany({});
+  await Campground.deleteMany({});
   for (let i = 0; i < 200; i++) {
     const random1000 = Math.floor(Math.random() * 1000);
     const random24 = Math.floor(Math.random() * 24);
     const random35 = Math.floor(Math.random() * 35);
     const random25 = Math.floor(Math.random() * 25);
     const price = Math.floor(Math.random() * 30) + 10;
+    const randomDate = `${Math.floor(Math.random() * 2) + 2020}-${Math.floor(Math.random() * 12) + 1}-${Math.floor(Math.random() * 28) + 1}`
     const camp = new Campground({
       author: `${authors[random24]}`,
       location: `${cities[random1000].city}, ${cities[random1000].state}`,
@@ -109,7 +110,8 @@ const seedDB = async () => {
         }
       ],
       description: `${descriptions[random25]}`,
-      price: `${price}`
+      price: `${price}`,
+      created: `${randomDate}`
     })
     await camp.save();
   }
@@ -118,4 +120,5 @@ const seedDB = async () => {
 seedDB()
   .then(() => {
     mongoose.connection.close();
+    console.log('Database closed');
   })
