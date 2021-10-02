@@ -102,8 +102,8 @@ const seedDB = async () => {
       },
       images: [
         {
-          url: `${imageFiles.url}`,
-          filename: `YelpCamp/${imageFiles.filename}`
+          url: `${imageFiles[random35].url}`,
+          filename: `YelpCamp/${imageFiles[random35].filename}`
         }
       ],
       description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores optio amet illum ab perferendis! Non, atque, laboriosam itaque voluptas quam perspiciatis animi quidem eum optio eaque fuga magni fugiat inventore!',
