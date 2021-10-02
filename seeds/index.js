@@ -88,7 +88,7 @@ const seedDB = async () => {
   for (let i = 0; i < 200; i++) {
     const random1000 = Math.floor(Math.random() * 1000);
     const random24 = Math.floor(Math.random() * 24);
-    const random35 = Math.floor(Math.random() * 35) + 1;
+    const random35 = Math.floor(Math.random() * 35);
     const random25 = Math.floor(Math.random() * 25);
     const price = Math.floor(Math.random() * 30) + 10;
     const camp = new Campground({
