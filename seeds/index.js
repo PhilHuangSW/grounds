@@ -65,6 +65,7 @@ const cities = require('./cities');
 const authors = require('./authors');
 const { places, descriptors } = require('./seedHelpers');
 const imageFiles = require('./imageFiles');
+const descriptions = require('./descriptions');
 
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
 
@@ -88,6 +89,7 @@ const seedDB = async () => {
     const random1000 = Math.floor(Math.random() * 1000);
     const random24 = Math.floor(Math.random() * 24);
     const random35 = Math.floor(Math.random() * 35) + 1;
+    const random25 = Math.floor(Math.random() * 25);
     const price = Math.floor(Math.random() * 30) + 10;
     const camp = new Campground({
       author: `${authors[random24]}`,
@@ -106,7 +108,7 @@ const seedDB = async () => {
           filename: `YelpCamp/${imageFiles[random35].filename}`
         }
       ],
-      description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores optio amet illum ab perferendis! Non, atque, laboriosam itaque voluptas quam perspiciatis animi quidem eum optio eaque fuga magni fugiat inventore!',
+      description: `${descriptions[random25]}`,
       price: `${price}`
     })
     await camp.save();
